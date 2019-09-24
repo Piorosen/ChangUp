@@ -209,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -306,6 +306,7 @@ GameObject:
   - component: {fileID: 1960035390}
   - component: {fileID: 1960035389}
   - component: {fileID: 1960035388}
+  - component: {fileID: 1960035392}
   m_Layer: 0
   m_Name: Bralli
   m_TagString: Untagged
@@ -380,12 +381,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960035387}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 123, y: 123, z: 123}
-  m_LocalScale: {x: 40, y: 2, z: 40}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 78.75, y: 2, z: 33}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1960035392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960035387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 716668ce152ffa147b63ea7c2dd87c27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockPrefab: {fileID: 1252245555605738515, guid: 62da1339e700a4c458f228b68f5a3fbe,
+    type: 3}
+  Size: {x: 6, y: 10}
+  Scale: {x: 0, y: 0, z: 0}
 --- !u!1001 &1985533000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,17 +418,17 @@ PrefabInstance:
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.2070446
+      value: -23.24
       objectReference: {fileID: 0}
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.1573858
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.5260303
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
@@ -436,7 +453,7 @@ PrefabInstance:
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1252245555605738519, guid: 62da1339e700a4c458f228b68f5a3fbe,
         type: 3}
@@ -516,3 +533,4 @@ MonoBehaviour:
   - {fileID: 1985533004}
   - {fileID: 1985533003}
   - {fileID: 1985533002}
+  State: 
