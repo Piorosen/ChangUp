@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ChanUpP.Manage;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ public class Bralli : MonoBehaviour
     public Vector2Int Size;
     public Vector3 Scale;
     List<GameObject> BlockList;
+
+    Converter conv = new Converter();
+
+    public string Text;
+    public bool Run;
 
     Vector3 GetPosition(int x, int y)
     {
@@ -35,11 +41,13 @@ public class Bralli : MonoBehaviour
 
         return result;
     }
-
+     
     // Start is called before the first frame update
     void Start()
     {
-        this.transform.localScale = new Vector3(blockPrefab.transform.localScale.x * Size.y, 2, blockPrefab.transform.localScale.z * Size.x);
+        this.transform.localScale = new Vector3(blockPrefab.transform.localScale.x * Size.y,
+                                                this.transform.localScale.y,
+                                                blockPrefab.transform.localScale.z * Size.x);
 
         BlockList = new List<GameObject>();
 
@@ -60,10 +68,43 @@ public class Bralli : MonoBehaviour
         }
     }
 
-    public string Text;
+    string ListToString(List<bool> value)
+    {
+        string result = "";
+
+        foreach (var i in value)
+        {
+            result += $"{i}, ";
+        }
+
+        return result;
+    }
 
     void Update()
     {
+        if (Run)
+        {
+            var p = conv.StringToBriall(Text);
 
+            foreach (var o in BlockList)
+            {
+                o.GetComponent<Block>().Call(new List<bool> { false, false, false, false, false, false });
+            }
+
+            int size = 0;
+            foreach (var o in p)
+            {
+                foreach (var i in o)
+                {
+                    if (size < BlockList.Count)
+                    {
+                        Debug.Log(ListToString(i));
+                        
+                        BlockList[size++].GetComponent<Block>().Call(i);
+                    }
+                }
+            }
+
+        }
     }
 }

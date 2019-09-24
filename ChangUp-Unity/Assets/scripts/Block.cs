@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using ChanUpP.Manage;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,14 +15,15 @@ public class Block : MonoBehaviour
         {
             o.transform.localPosition = new Vector3(o.transform.localPosition.x, 0, o.transform.localPosition.z);
         }
-
     }
 
     public void Call(List<bool> State)
     {
         this.State = State;
 
-        for (int i = 0; i < this.State.Count; i++)
+        int range = State.Count > Object.Count ? Object.Count : State.Count;
+
+        for (int i = 0; i < range; i++)
         {
             if (this.State[i])
             {
@@ -37,5 +39,6 @@ public class Block : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
     }
 }
